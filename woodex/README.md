@@ -26,7 +26,8 @@ npm run start
 
 ## Structure
 - `app/` — routes: home (full home-two parity), about, services (+6 detail pages), pricing
-  (3 engagement tiers), projects, journal (+3 articles), contact, `sitemap.ts`, `robots.ts`
+  (3 engagement tiers), projects, journal (+3 articles), contact, style-guide (noindex design
+  system reference), `sitemap.ts`, `robots.ts`
 - `components/` — motion system (`Motion.tsx`, `SmoothScroll.tsx`, `Preloader.tsx`, `Cursor.tsx`),
   chrome (`Header`, `Footer`, `WhatsAppFab`), home acts (`components/home/*`)
 - `lib/services.ts` — full SEO content for all six services (copy, deliverables, stats, FAQs)

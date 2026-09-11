@@ -93,7 +93,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-[var(--color-line-light)] pt-8 text-xs text-[var(--color-cream)]/45 md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
+            <Link href="/style-guide" className="underline-offset-4 opacity-70 transition-opacity hover:opacity-100 hover:underline">
+              Style guide
+            </Link>
+          </div>
           <p className="flex items-center gap-2">
             Designed in Lahore
             <span className="inline-block h-1 w-1 rounded-full bg-[var(--color-brass)]" />

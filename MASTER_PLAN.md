@@ -139,8 +139,9 @@ Woodex is a **full-suite interior studio**: Workplace & residential interior des
 
 - **Display — Fraunces Variable** (opsz axis, roman + italic, weights 300–600): a warm "old-style" soft-serif with characterful italics. Reasoning: it carries the timber/craft emotion, scales monumentally for cinematic headlines, and its italic gives us a cheap-but-rich accent (rotating hero line, emphasis words) that is a recognizable Linoxa-family gesture.
 - **Body/UI — Inter Variable** (300–700, tabular numerals for stats/counters): neutral, engineered, superbly legible on mobile; the precision counterweight to Fraunces' warmth.
-- **Fluid scale (clamp, mobile→desktop):** Display `clamp(3.25rem,1rem+9vw,10.5rem)` · H1 `2.75→6.25rem` · H2 `2.25→3.75rem` · H3 `1.75→2.5rem` · Lead `1.06→1.25rem` · Body 1rem / 1.65 · eyebrows 11px, +0.24em tracking, uppercase.
-- **Rules:** headlines tight (`letter-spacing:-0.02em`, line-height 1.04); never more than ~68 characters per measure; italic reserved for *meaning* (rotating phrases, pull statements) — never decoration across whole paragraphs; numbers always tabular.
+- **Fluid scale (clamp, mobile→desktop) — aligned to the Linoxa style-guide spec:** Display (hero only) `clamp(3.25rem,1rem+9vw,10.5rem)` · **H1 5rem / 112.5% / 500** · **H2 2.812rem / 122% / 500** · **H3 1.875rem / 133% / 500** · H4 1.562rem / 128% · H5 1.25rem / 150% · H6 1.125rem / 155% / 400 · Lead `1.06→1.25rem` · Body 1rem / **162%** / 400 · Sub-text 0.875rem / 185% · Button 0.9375rem / 162% / 500 · eyebrows 11px, +0.24em tracking, uppercase.
+- **Rules:** headlines tight (`letter-spacing:-0.02em`); never more than ~68 characters per measure; italic reserved for *meaning* (rotating phrases, pull statements) — never decoration across whole paragraphs; numbers always tabular.
+- **Live reference:** the full system is published at **`/style-guide`** (noindex utility, linked in the footer) mirroring Linoxa's style guide: colors with copy-to-clipboard hex, the complete type table + live specimens, small/medium/large shadows, logo & favicon lockups, all button states (incl. focus/disabled), lists, social + line icon library, 40px avatars, inputs with success/error states, and rich-text standards.
 - **Self-hosted via fontsource** (no Google round-trip; FOUT eliminated; see Performance).
 
 ## 8. Spacing, grid, radius, elevation
@@ -215,6 +216,7 @@ Film grain (animated SVG turbulence, fixed, 5% opacity), warm radial glows per s
 /journal                       Editorial index + featured article
 /journal/[slug]                3 SEO articles (Article schema)
 /contact                       Brief form (WhatsApp handoff) + details
+/style-guide                   Design system reference (noindex; Linoxa style-guide equivalent)
 /sitemap.xml · /robots.txt · JSON-LD on every relevant route
 Phase 2: /projects/[slug] case studies · /locations/* (DHA, Bahria, Gulberg, Islamabad…)
          /pricing or /cost-guide lead magnet · /profile.pdf
@@ -464,5 +466,6 @@ Run: `cd woodex && npm install && npm run dev` (build currently passes; 20 stati
 
 # APPENDIX B — Design tokens at a glance
 Paper `#F4EFE6` · Night `#100D0A` · Walnut `#5B3D2B` · Brass `#A97F49`/`#C9A66B` · Ink `#201A14`
-Type: Fraunces Variable (display, italic accents) + Inter Variable (UI/body) · Display `clamp(3.25rem,1rem+9vw,10.5rem)`
-Ease: `cubic-bezier(.22,1,.36,1)` · radius 14/26/pill · section padding `clamp(5.5rem,4rem+7vw,11rem)`.
+Type: Fraunces Variable 500 (display, italic accents) + Inter Variable (UI/body) · hero display `clamp(3.25rem,1rem+9vw,10.5rem)` · H1 5rem / H2 2.812rem / H3 1.875rem (style-guide spec)
+Ease: `cubic-bezier(.22,1,.36,1)` · radius 14/26/pill · shadows small `0 4px 14px -6px` / medium card / large lift · section padding `clamp(5.5rem,4rem+7vw,11rem)`.
+Live system reference: `/style-guide`.
