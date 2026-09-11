@@ -79,7 +79,7 @@ export default function Preloader() {
           <span ref={bar} />
         </div>
         <div className="flex items-center justify-between" style={{ width: 'min(280px, 60vw)' }}>
-          <span className="text-[11px] uppercase tracking-[0.22em] text-[#8d8378]">Woodex Interiors</span>
+          <span className="text-[11px] uppercase tracking-[0.22em] text-[#8f98a6]">Woodex Interiors</span>
           <span ref={count} className="preloader-count">000</span>
         </div>
       </div>

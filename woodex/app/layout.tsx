@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import '@fontsource-variable/inter/wght.css';
-import '@fontsource-variable/fraunces/wght.css';
-import '@fontsource-variable/fraunces/wght-italic.css';
+import '@fontsource-variable/sora/wght.css';
 import './globals.css';
 
 import SmoothScroll from '@/components/SmoothScroll';
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#17120d',
+  themeColor: '#111111',
   colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,

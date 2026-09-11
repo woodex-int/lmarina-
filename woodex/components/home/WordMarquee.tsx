@@ -3,17 +3,17 @@
 import Marquee from '@/components/Marquee';
 
 const WORDS = [
-  { word: 'Interiors', style: 'serif italic', accent: false },
-  { word: 'Architecture', style: 'sans outline', accent: false },
-  { word: 'Furniture', style: 'serif italic', accent: true },
-  { word: '3D Design', style: 'sans outline', accent: false },
-  { word: 'Fit-Outs', style: 'serif italic', accent: false },
+  { word: 'Interiors', style: 'solid', accent: false },
+  { word: 'Architecture', style: 'outline', accent: false },
+  { word: 'Furniture', style: 'solid', accent: true },
+  { word: '3D Design', style: 'outline', accent: false },
+  { word: 'Fit-Outs', style: 'solid', accent: false },
 ];
 
 function Item({ word, style, accent }: { word: string; style: string; accent: boolean }) {
   const cls =
-    style === 'serif italic'
-      ? `font-[family-name:var(--font-display)] italic ${accent ? 'text-[var(--color-walnut)]' : 'text-[var(--color-espresso)]'}`
+    style === 'solid'
+      ? `font-[family-name:var(--font-display)] font-medium ${accent ? 'text-[var(--color-walnut)]' : 'text-[var(--color-espresso)]'}`
       : 'text-transparent [-webkit-text-stroke:1.5px_var(--color-espresso)]';
   return (
     <span className="flex items-center">

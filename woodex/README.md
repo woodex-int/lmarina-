@@ -13,7 +13,7 @@ carousel, FAQ accordions and a WhatsApp-first brief form.
 - Next.js 15 (App Router, fully static/SSG) · React 19 · TypeScript
 - Tailwind CSS v4 (design tokens in `app/globals.css`)
 - GSAP + ScrollTrigger · Lenis · lucide-react
-- Self-hosted variable fonts (Fraunces + Inter via fontsource)
+- Self-hosted variable fonts (Sora + Inter via fontsource)
 - No UI framework / no CMS dependency — content lives in `lib/`
 
 ## Run

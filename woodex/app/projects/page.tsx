@@ -80,7 +80,7 @@ export default function ProjectsPage() {
         <Marquee speed={34} reverse>
           {['Offices', 'Homes', 'Retail', 'Hospitality', 'Coworking', 'Furniture'].map((t, i) => (
             <span key={i} className="flex items-center">
-              <span className={`mx-6 whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(2rem,5vw,4rem)] ${i % 2 ? 'italic text-[var(--color-walnut)]' : ''}`}>{t}</span>
+              <span className={`mx-6 whitespace-nowrap font-[family-name:var(--font-display)] font-medium text-[clamp(2rem,5vw,4rem)] tracking-[-0.04em] ${i % 2 ? 'text-[var(--color-walnut)]' : ''}`}>{t}</span>
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-brass)]" />
             </span>
           ))}

@@ -16,7 +16,7 @@ export default function Testimonials() {
 
   return (
     <section className="on-dark relative overflow-hidden bg-[var(--color-walnut-deep)] py-[var(--spacing-section)] text-[var(--color-cream)]">
-      <div aria-hidden className="pointer-events-none absolute -right-20 top-0 h-[34vw] w-[34vw] rounded-full bg-[radial-gradient(circle,rgba(201,166,107,0.18),transparent_65%)]" />
+      <div aria-hidden className="pointer-events-none absolute -right-20 top-0 h-[34vw] w-[34vw] rounded-full bg-[radial-gradient(circle,rgba(125,147,184,0.20),transparent_65%)]" />
       <div className="container-x relative">
         <Fade>
           <div className="mb-12 flex items-center justify-between">

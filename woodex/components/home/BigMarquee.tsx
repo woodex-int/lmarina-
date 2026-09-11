@@ -9,7 +9,7 @@ export default function BigMarquee() {
       <Marquee speed={38}>
         {items.map((t, i) => (
           <span key={i} className="flex items-center">
-            <span className={`mx-5 whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(2.2rem,6vw,5.5rem)] leading-none tracking-[-0.03em] md:mx-9 ${i % 2 ? 'italic text-[var(--color-brass-soft)]' : 'text-[var(--color-cream)]'}`}>
+            <span className={`mx-5 whitespace-nowrap font-[family-name:var(--font-display)] text-[clamp(2.2rem,6vw,5.5rem)] font-medium leading-none tracking-[-0.04em] md:mx-9 ${i % 2 ? 'text-[var(--color-brass-soft)]' : 'text-[var(--color-cream)]'}`}>
               {t}
             </span>
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" className="text-[var(--color-brass-soft)]">

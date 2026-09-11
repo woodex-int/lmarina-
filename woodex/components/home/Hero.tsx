@@ -99,8 +99,8 @@ export default function Hero() {
     <section ref={root} className="relative flex min-h-[100svh] flex-col overflow-hidden pt-32 md:pt-36" data-cursor="">
       {/* warm ambient wash */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -right-[10%] top-[8%] h-[46vw] w-[46vw] rounded-full bg-[radial-gradient(circle,rgba(169,127,73,0.16),transparent_65%)]" />
-        <div className="absolute -left-[12%] bottom-[-10%] h-[40vw] w-[40vw] rounded-full bg-[radial-gradient(circle,rgba(91,61,43,0.12),transparent_65%)]" />
+        <div className="absolute -right-[10%] top-[8%] h-[46vw] w-[46vw] rounded-full bg-[radial-gradient(circle,rgba(15,30,54,0.10),transparent_65%)]" />
+        <div className="absolute -left-[12%] bottom-[-10%] h-[40vw] w-[40vw] rounded-full bg-[radial-gradient(circle,rgba(15,30,54,0.08),transparent_65%)]" />
       </div>
 
       <div className="container-x relative z-10 grid flex-1 grid-cols-1 gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-center">

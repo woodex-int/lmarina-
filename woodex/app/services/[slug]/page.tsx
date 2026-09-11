@@ -96,7 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         image={s.heroImage}
         imageAlt={`${s.title} by Woodex Interiors, Lahore`}
         crumb={s.shortName}
-        copy={<p className="font-[family-name:var(--font-display)] italic !text-[var(--color-walnut)] text-[clamp(1.3rem,2.2vw,1.9rem)] !leading-[1.25] not-italic">{s.tagline}</p>}
+        copy={<p className="font-[family-name:var(--font-display)] font-medium !text-[var(--color-walnut)] text-[clamp(1.3rem,2.2vw,1.9rem)] !leading-[1.25]">{s.tagline}</p>}
       >
         <div className="flex flex-wrap gap-4">
           <CTA href="/contact">Book free consultation</CTA>

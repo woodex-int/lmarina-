@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="idx-label mb-5 !text-[#8d8378]">Explore</p>
+            <p className="idx-label mb-5 !text-[#8f98a6]">Explore</p>
             <ul className="space-y-3 text-sm text-[var(--color-cream)]/75">
               {nav.map((n) => (
                 <li key={n.href}>
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="idx-label mb-5 !text-[#8d8378]">Services</p>
+            <p className="idx-label mb-5 !text-[#8f98a6]">Services</p>
             <ul className="space-y-3 text-sm text-[var(--color-cream)]/75">
               {services.slice(0, 5).map((s) => (
                 <li key={s.slug}>
@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div className="col-span-2 lg:col-span-1">
-            <p className="idx-label mb-5 !text-[#8d8378]">Studio</p>
+            <p className="idx-label mb-5 !text-[#8f98a6]">Studio</p>
             <ul className="space-y-4 text-sm text-[var(--color-cream)]/75">
               <li className="flex gap-3">
                 <MapPin size={16} className="mt-1 shrink-0 text-[var(--color-brass-soft)]" />

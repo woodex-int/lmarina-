@@ -136,13 +136,13 @@ export default function Header() {
 
           <div className="flex flex-col justify-end gap-8 text-sm">
             <div className="menu-meta">
-              <p className="idx-label mb-2 !text-[#8d8378]">Start a project</p>
+              <p className="idx-label mb-2 !text-[#8f98a6]">Start a project</p>
               <a href={`mailto:${site.email}`} className="text-lg text-[var(--color-cream)] underline-offset-4 hover:underline">
                 {site.email}
               </a>
             </div>
             <div className="menu-meta">
-              <p className="idx-label mb-2 !text-[#8d8378]">Studio</p>
+              <p className="idx-label mb-2 !text-[#8f98a6]">Studio</p>
               <p className="text-[var(--color-cream)]/80">
                 {site.address.street}
                 <br />

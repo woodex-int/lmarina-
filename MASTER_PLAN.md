@@ -16,7 +16,7 @@
 
 **The positioning.** *Woodex — Considered spaces. Crafted in wood.* A design studio that began as a solid-wood furniture workshop and now designs and builds offices, homes and retail under one accountable contract. The category sells decoration; Woodex sells **certainty** — render-to-reality fidelity, fixed BOQ pricing, and furniture made by the people who designed the room.
 
-**The product.** A Linoxa-`home-two`-identical experience — preloader, rotating-word hero, statement manifesto, word marquees, partner strip, hover-image service index, workshop feature, asymmetric collage, dark feature trio, big-type marquee, sticky about narrative, five-step process, testimonial slider, journal, CTA band, mega footer — wrapped in a warmer, material-led art direction (Fraunces serif + Inter, walnut/bone/brass) and engineered for the actual searches Pakistanis run ("office interior design lahore", "1 kanal house interior", "turnkey contractors", "custom sheesham furniture").
+**The product.** A Linoxa-`home-two`-identical experience — preloader, rotating-word hero, statement manifesto, word marquees, partner strip, hover-image service index, workshop feature, asymmetric collage, dark feature trio, big-type marquee, sticky about narrative, five-step process, testimonial slider, journal, CTA band, mega footer — wrapped in the exact Linoxa design system (Sora + Inter, Light Beige / Jet Black / Deep Navy, documented type scale) and engineered for the actual searches Pakistanis run ("office interior design lahore", "1 kanal house interior", "turnkey contractors", "custom sheesham furniture").
 
 **The commercial model of the site.** One goal: a booked consultation or WhatsApp brief. Every page ends at a *free site visit + test-fit + budget band* offer designed to feel low-commitment, because the single biggest category friction is fear of the unknown budget.
 
@@ -82,7 +82,7 @@ Woodex is a **full-suite interior studio**: Workplace & residential interior des
 | Capability | Mavric | Hiline | Aenzay | **Woodex (this plan)** |
 |---|---|---|---|---|
 | Cinematic, award-calibre motion/UX | ✗ | ✗ | ✗ | **✓ Linoxa-grade system** |
-| Editorial typography & art direction | ✗ | partial | ✗ | **✓ Fraunces/Inter, material system** |
+| Editorial typography & art direction | ✗ | partial | ✗ | **✓ Sora/Inter, exact Linoxa tokens** |
 | Own furniture workshop as hero | partial | ✗ | ✗ | **✓ flagship feature card + service** |
 | Render-to-reality promise (3D→build) | ✗ | partial | ✗ | **✓ 3D service + side-by-side proof** |
 | Transparent budget bands & timelines | partial | ✗ | ✗ | **✓ published in Journal & FAQs** |
@@ -115,33 +115,37 @@ Woodex is a **full-suite interior studio**: Workplace & residential interior des
 4. **Self-recognition** (about narrative + process + stats + testimonials): the visitor sees their own project running smoothly. Emotion: *relief from category anxiety.*
 5. **Commitment** (journal reinforces expertise → CTA band): invitation, not pressure. Emotion: *low-risk next step.*
 
-**Material metaphor running through every page:** *timber revealing itself* — clip-path wipes that read like veneer being laid, grain-scale macro moments, workshop imagery, brass joinery details. The site should feel like running a hand over warm walnut in a quiet, sunlit showroom.
+**Material metaphor running through every page:** *a room revealed in daylight* — clip-path wipes that read like blinds lifting onto a finished space, light oak and pale stone textures, workshop moments in bright ateliers, single deep-navy accents. The site should feel like walking into a sunlit, museum-quiet architecture studio — beige plaster, pale timber, black steel, one navy chair.
 
 ## 6. Color system (with reasoning)
 
-| Token | Hex | Role | One-line reasoning |
+The palette now follows the **Linoxa style guide exactly** (8 documented tokens), with Woodex semantic token names mapped onto them:
+
+| Linoxa token | Hex | Woodex role | One-line reasoning |
 |---|---|---|---|
-| Paper | `#F4EFE6` | Page base (warm bone) | Warm off-white reads as gallery/plaster; beats sterile white for a wood-led brand and flatters photography. |
-| Paper-2 | `#ECE4D6` | Raised surfaces, bands | Creates depth without grey; the colour of unfinished oak/limestone. |
-| Cream | `#FAF7F1` | Cards on dark, inverted text | Highest warm legibility. |
-| Sand / Clay | `#D9CBB4` / `#C4AD8C` | Borders, muted fills | Hairlines that photograph like grout/mortar — softer than black lines. |
-| Brass | `#A97F49` (soft `#C9A66B`) | **Primary accent** — links, numbers, active states | Brass hardware is the jewellery of wood interiors; signals luxury without gold's flashiness. |
-| Walnut | `#5B3D2B` (deep `#3D2819`) | **Brand colour**, emphasis/CTA overlays | Owns the category material; deep enough for accessible contrast on cream. |
-| Espresso/Ink | `#17120D` / `#201A14` | Type, dark sections, primary buttons | Warm near-black (never pure `#000`) keeps the cinematic cohesion. |
-| Ink-soft / Fog | `#6B6055` / `#8D8378` | Body copy, captions | Warm greys preserve the palette's temperature. |
-| Night | `#100D0A` | Dark bands/preloader | The colour of a room at 7 p.m. with warm lamps on — the dramatic counterpoint. |
+| Light Beige | `#FCF2E8` | Page base (`paper`) | The template's signature warm gallery background; flatters architectural photography without sterile white. |
+| Black | `#000000` | Preloader, darkest bands (`night`) | Maximum cinematic contrast for entrances and the feature-trio band. |
+| Jet Black | `#111111` | Headlines, primary buttons, raised dark surfaces (`espresso`/`ink`/`night-2`) | Slightly softer than pure black — the workhorse dark. |
+| Deep Navy Blue | `#0F1E36` | **Single brand accent** (`walnut`/`brass` roles): emphasis, links, icon tiles, dark feature band | The one cool note in a warm system — reads premium and architectural; tint `#7D93B8` used for on-dark accent text. |
+| Charcoal Gray | `#525252` | Body copy (`ink-soft`) | Documented body-text grey with AA contrast on beige. |
+| Silver | `#C0C0C0` | Muted fills (`clay`) | Neutral mid-grey for de-emphasized UI. |
+| Light Gray | `#E3E1E1` | Raised neutral surfaces (`paper-2`) | Cool light grey cards/bands that sit cleanly on beige. |
+| Deep Gray | `#D9D9D9` | Borders, hairlines (`sand`) | The standard neutral border value. |
+| *(derived)* | `#8F98A6` | Captions/eyebrows on dark (`fog`) | Navy-tinted caption grey for dark bands. |
+| White | `#FFFFFF` | Inverted text/pills (`cream`) | Buttons and type on dark. |
 
-**Usage rhythm:** light `Paper` base → dark `Night`/`Walnut-deep` bands every 3–4 sections (Feature trio, signature band, outcomes band, process). Dark bands are *pacing devices* that make the next light section feel like walking into daylight.
+**Usage rhythm:** light `Light Beige` base → black / Jet-Black / Deep-Navy bands every 3–4 sections (feature trio = black, signature/process = jet black, outcomes/testimonials = deep navy). Dark bands are *pacing devices* that make the next light section feel like walking into daylight. The original warm walnut/brass art direction was deliberately replaced to reach 1:1 design-system fidelity with Linoxa; "wood craft" now lives in imagery, copy and the workshop story rather than brown UI chrome.
 
-**Contrast & accessibility:** Ink `#201A14` on Paper `#F4EFE6` ≈ 11.8:1 (AAA); Cream on Espresso ≈ 14:1:1; Brass-soft on Night ≈ 6.9:1 (AA for UI/normal text where used).
+**Contrast & accessibility:** Jet Black `#111` on Light Beige `#FCF2E8` ≈ 13.5:1 (AAA); white on Jet Black ≈ 17:1; Deep Navy on beige ≈ 9:1; Charcoal `#525252` body on beige ≈ 7:1 (AA).
 
 ## 7. Typography
 
-- **Display — Fraunces Variable** (opsz axis, roman + italic, weights 300–600): a warm "old-style" soft-serif with characterful italics. Reasoning: it carries the timber/craft emotion, scales monumentally for cinematic headlines, and its italic gives us a cheap-but-rich accent (rotating hero line, emphasis words) that is a recognizable Linoxa-family gesture.
-- **Body/UI — Inter Variable** (300–700, tabular numerals for stats/counters): neutral, engineered, superbly legible on mobile; the precision counterweight to Fraunces' warmth.
+Linoxa is a **sans-serif system** (confirmed from the live template and its "Sans Serif" classification) — no serif or italic is used.
+- **Display — Sora Variable** (weights 400–700, headings at **500**): modern geometric-grotesque display face matching the reference headings; tight display tracking (-0.03em, hero -0.045em).
+- **Body/UI — Inter Variable** (300–700, tabular numerals for stats/counters): neutral, engineered, superbly legible on mobile.
 - **Fluid scale (clamp, mobile→desktop) — aligned to the Linoxa style-guide spec:** Display (hero only) `clamp(3.25rem,1rem+9vw,10.5rem)` · **H1 5rem / 112.5% / 500** · **H2 2.812rem / 122% / 500** · **H3 1.875rem / 133% / 500** · H4 1.562rem / 128% · H5 1.25rem / 150% · H6 1.125rem / 155% / 400 · Lead `1.06→1.25rem` · Body 1rem / **162%** / 400 · Sub-text 0.875rem / 185% · Button 0.9375rem / 162% / 500 · eyebrows 11px, +0.24em tracking, uppercase.
-- **Rules:** headlines tight (`letter-spacing:-0.02em`); never more than ~68 characters per measure; italic reserved for *meaning* (rotating phrases, pull statements) — never decoration across whole paragraphs; numbers always tabular.
-- **Live reference:** the full system is published at **`/style-guide`** (noindex utility, linked in the footer) mirroring Linoxa's style guide: colors with copy-to-clipboard hex, the complete type table + live specimens, small/medium/large shadows, logo & favicon lockups, all button states (incl. focus/disabled), lists, social + line icon library, 40px avatars, inputs with success/error states, and rich-text standards.
+- **Rules:** headlines tight (`letter-spacing:-0.03em`, hero -0.045em); never more than ~68 characters per measure; emphasis words render non-italic at weight 500 in Deep Navy (Sora has no italic); numbers always tabular.
+- **Live reference:** the full system is published at **`/style-guide`** (noindex utility, linked in the footer) mirroring Linoxa's style guide: the exact 8-color palette with copy-to-clipboard hex, complete type table + live specimens, small/medium/large shadows, logo & favicon lockups, all button states (incl. focus/disabled), lists, social + line icon library, 40px avatars, inputs with success/error states, and rich-text standards.
 - **Self-hosted via fontsource** (no Google round-trip; FOUT eliminated; see Performance).
 
 ## 8. Spacing, grid, radius, elevation
@@ -153,24 +157,24 @@ Woodex is a **full-suite interior studio**: Workplace & residential interior des
 
 ## 9. Imagery & material treatment
 
-- **Photography direction:** real interiors in golden-hour/late-afternoon warm light; walnut/oak veneer, travertine/terrazzo, brass, boucle/linen, leather; mostly **unpeopled** rooms (the viewer imagines themselves in); occasional candid craft/team moments for humanity; macro wood-grain textures as section backgrounds.
+- **Photography direction:** bright, airy interiors in soft daylight; light beige plaster/limewash, **pale oak** veneer and slats, light travertine/terrazzo, cream boucle/linen, black steel frames, and **one deliberate Deep Navy accent** per scene (a chair, panel or door); mostly **unpeopled** rooms (the viewer imagines themselves in); occasional candid craft/team moments for humanity; light oak grain macro textures.
 - **Crops:** 4:5 hero portrait (mobile 4:5/1:1), 16:10 feature, 4:3 cards, 1:1 accents; the asymmetric collage (big + wide + two macros) is a signature Linoxa device, retained.
-- **Treatment:** zero fake HDR; consistent warm grade (temperature +6, shadows walnut-tinted); every image sits inside clip-reveal and slow 1.05–1.25 scale on scroll/hover. Alt text always descriptive & keyword-aware (accessibility + image SEO).
-- **Generated suite (delivered):** hero office, office/workspace, residential, retail, furniture-workshop, 3D studio, turnkey fit-out, studio team, boardroom, hotel-lobby — plus (next pass) cafe, bedroom, coworking, macro grain, journal cover. Final production should replace AI images with shot photography following this exact shot list.
+- **Treatment:** zero fake HDR; consistent bright neutral grade (high-key, soft shadows, no amber/sepia); every image sits inside clip-reveal and slow 1.05–1.25 scale on scroll/hover. Alt text always descriptive & keyword-aware (accessibility + image SEO).
+- **Generated suite (delivered, all regraded to the Linoxa palette):** hero office, office/workspace, residential, retail, furniture-workshop (pale oak), 3D studio, turnkey fit-out, studio team, boardroom, hotel-lobby. Final production should replace AI images with shot photography following this exact shot list.
 
 ## 10. Buttons, micro-components & states
 
 - **Primary button:** espresso pill, arrow in a circular chip; on hover a walnut fill wipes up (translateY 101%→0), arrow nudges x+3. Secondary = 1px hairline outline that fills invert; light variants for dark bands. 550ms, easing `cubic-bezier(.22,1,.36,1)`.
 - **Service rows:** hairline-separated index rows; hover reveals a floating rotated preview image (scale .92 rotate(-4°) → 1 rotate(2°)) that follows the row — the most copied "luxury index" interaction and the centrepiece of the services section.
 - **Tags/pills** for portfolio filters; **accordion** for FAQs (grid-template-rows 0fr→1fr, plus rotates 45°); **inputs** are underline-only, no boxes (quiet luxury); labels are tracked uppercase micros.
-- **State coverage:** hover, focus-visible (2px brass offset ring — non-negotiable for a11y), active, disabled, reduced-motion.
+- **State coverage:** hover, focus-visible (2px Deep-Navy offset ring — non-negotiable for a11y), active, disabled, reduced-motion.
 
 ## 11. THE 3D / HERO SPEC (creative-technologist brief)
 
 ### 11.1 Shipped version (Layered "2.5D" cinematic — in the build now)
 Chosen deliberately for performance and because we have no proprietary model yet; it achieves 90% of the awe at 2% of the payload.
 
-- **Central composition:** portrait 4:5 architectural photograph (warm walnut office/reception) in a rounded 26px frame with a soft ambient shadow and a warm radial brass glow behind it.
+- **Central composition:** portrait 4:5 architectural photograph (bright beige/pale-oak office/reception with a navy accent) in a rounded 26px frame with a soft ambient shadow and a subtle navy radial glow behind it.
 - **Depth layers:** (a) grain overlay fixed at z-9000; (b) ambient radial gradients at ~10% parallax; (c) headline z-10; (d) media with scroll-scrubbed scale 1.35→1.12 and y 14%; (e) two floating glass cards ("12 years of craft", "Lahore · Islamabad · Karachi") that **tilt in 3D toward the cursor** (rotateX/rotateY ±7°, parallax x±26px, transformPerspective 600).
 - **Headline:** static line "Considered spaces." → **rotating italic line cycling** *Lasting design. → Built in wood. → Life, enhanced.* every 3.2s (mask slide + fade) → static "crafted in wood."
 - **Entrance (after preloader):** eyebrow 0→1; headline lines masked rise (120%→0, 3° rotation, stagger .12, 1.2s, power4.out); copy blocks .55s; media clip-path inset(0 0 100%)→0 (1.4s) while image scales 1.35→1 over 2.2s; chips at .9s.
@@ -180,10 +184,10 @@ Chosen deliberately for performance and because we have no proprietary model yet
 
 ### 11.2 Flagship WebGL upgrade (Phase 2 — the "unforgettable" option)
 - **Central object:** a slowly rotating **architectural room section / exploded axonometric of an office** that *assembles itself from solid-wood parts* — timber slats, a boardroom table, glazing panels, pendant lamps drifting together on load (the brand story in 3 seconds: pieces → room).
-- **Geometry/materials:** low-poly PBR; walnut slats with procedural grain normal map + subtle clearcoat; brass hardware at metalness 1/roughness .28; frosted glass (transmission) partitions; matte plaster walls; a single terrazzo floor plane.
+- **Geometry/materials:** low-poly PBR; pale-oak slats with procedural grain normal map + subtle clearcoat; black-steel hardware at metalness 1/roughness .28; frosted glass (transmission) partitions; matte Light-Beige plaster walls; one Deep-Navy upholstered element; a single light-terrazzo floor plane.
 - **Lighting:** HDRI golden-hour environment (warm key from screen-left at 3200K), soft cool fill opposite, one emissive pendant; baked AO; exposure tuned for cinematic blacks; optional god-ray volumetric (desktop only).
 - **Camera:** 35mm-equivalent, slight handheld breathing (±0.4°), slow dolly-in on load; scroll scrubs camera through the section → exploded view → completed room → pulls back as the next section pins.
-- **Type placement:** giant Fraunces headline left-aligned over the lower third; rotating phrase in italic walnut; headline casts no shadow but dims with scene exposure for legibility; depth-of-field keeps focus plane near the type/media seam.
+- **Geometry/materials:** low-poly PBR; pale-oak slats with procedural grain normal map + subtle clearcoat; black-steel hardware at metalness 1/roughness .28; frosted glass (transmission) partitions; matte Light-Beige plaster walls; one Deep-Navy upholstered element; a single light-terrazzo floor plane.
 - **Atmosphere:** fine dust motes in the light beam (GPU points, ≤2k), film grain overlay, subtle vignette, warm fog at 0.03 density.
 - **Cursor:** pointer raycasts onto furniture pieces — they highlight and a label fades in ("Walnut boardroom table — hand-joined"); click scrubs to that assembly step.
 - **Tech & budgets:** **React Three Fiber + drei + GLTF** + `@react-three/postprocessing`; DRACO/Meshopt compressed model ≤ 1.8MB, KTX2 textures; lazy-loaded behind the 2.5D poster so LCP is the `<Image>` (never the canvas); capped DPR 1.75; mobile renders the still image + light parallax (no WebGL under 6GB RAM / reduced-data); pause RAF when tab hidden; aim ≤1.2MB JS increment and 60fps (scrub at 30fps acceptable on scroll).
@@ -227,7 +231,7 @@ Phase 2: /projects/[slug] case studies · /locations/* (DHA, Bahria, Gulberg, Is
 | Time | Event | Purpose / attention design |
 |---|---|---|
 | 0.0–0.4s | `<head>` critical CSS, fonts preloaded, paper background painted instantly | No white flash; perceived speed |
-| 0.1–2.4s | **Preloader**: night panel, "Considered *spaces.*" masked word rises, brass bar scales, counter 000→100 (tab-numeral), word exits up, panel wipes away (power4, 1s) | Brand tone while assets settle; turns waiting into choreography |
+| 0.1–2.4s | **Preloader**: night panel, "Considered *spaces.*" masked word rises, navy-tinted bar scales, counter 000→100 (tab-numeral), word exits up, panel wipes away (power4, 1s) | Brand tone while assets settle; turns waiting into choreography |
 | 2.4–4.5s | **Hero entrance** (timeline §11.1): eyebrow → masked headline lines → copy/CTAs → image clip wipe + image settle zoom → floating chips | Eye path: top-left word → face of the type → image → CTAs |
 | 3.2s loop | Rotating italic phrase every 3.2s | Keeps hero alive without motion noise; reinforces 3 brand values |
 | Scroll act 1 | **Statements** (3 manifesto rows, numbered 01–03) reveal lines by word as they enter; paragraphs fade | Reading cadence; establishes philosophy |
@@ -258,7 +262,7 @@ Phase 2: /projects/[slug] case studies · /locations/* (DHA, Bahria, Gulberg, Is
 - **Pinned moments (Phase 2 enhancement):** hero camera scrub; an optional pinned horizontal "process" scene on desktop only; service gallery pin on case-study pages.
 - **Scene changes between dark/light bands:** clip-wipe the *background panel* from the bottom as it enters (0.9s), so day/night feels intentional; type reveals 120ms after the panel.
 - **Image-sequence option (case pages):** export 60–90 frame JPEG sequence at 1600px (≈1.2–1.8MB after AVIF), scrub via ScrollTrigger + `<canvas>` with preloading; use for "renders → construction → finished room" — powerful render-to-reality proof.
-- **Micro-interactions:** button wipe/fill; arrow chip translate/rotate 45°; service-row preview float; magnetic buttons (max 6px pull — add in Phase 2); link underline scaleX flip; accordion grid-rows; form field underline brass on focus; chip 3D cursor tilt; menu link x+3 with arrow fade.
+- **Micro-interactions:** button wipe/fill; arrow chip translate/rotate 45°; service-row preview float; magnetic buttons (max 6px pull — add in Phase 2); link underline scaleX flip; accordion grid-rows; form field underline Deep-Navy on focus; chip 3D cursor tilt; menu link x+3 with arrow fade.
 - **Easing library:** standard `--ease-lux cubic-bezier(.22,1,.36,1)` (exits/entrances), `--ease-soft (.65,0,.35,1)` (panel wipes), `--ease-spring (.34,1.4,.4,1)` (icon pops only).
 - **Timing law:** entrances 0.8–1.4s; micro ≤0.55s; hover ≤0.5s; never chain more than 4 elements in one tween; **scrubbed motion always eased `none`**; hero autoplay loops use sine/ease power1 (never linear mechanical).
 - **Performance guardrails:** transforms/opacity only (no layout-animating properties); `will-change` applied and removed around animation; one ScrollTrigger.refresh after fonts/images; ScrollTriggers batched; cap marquee (CSS keyframes, GPU transform only).
@@ -385,7 +389,7 @@ Ranked by **impact on perceived quality**:
 9. **Favicon/social/404/email-template finish** — cheap sites forget the last 2% (all delivered).
 10. **Copy brevity**: short lines that fit phones; never wall-of-text above the fold.
 11. **Consistent corner/button/arrow/icon language** (single icon set — Lucide, 1.5 stroke).
-12. **Restraint in colour**: 1 brass accent; never multi-colour CTAs.
+12. **Restraint in colour**: 1 Deep-Navy accent; never multi-colour CTAs.
 
 ## 27. Full-dimension audit checklist (visual · story · motion · interaction · responsive · a11y · performance · compat · SEO · conversion)
 *Used as the QA rubric before launch; each item gets pass/fail with owner.*
@@ -464,8 +468,8 @@ public/images/  10 generated brand-consistent images (more slotted for next gene
 ```
 Run: `cd woodex && npm install && npm run dev` (build currently passes; 20 static routes; 103 kB shared JS).
 
-# APPENDIX B — Design tokens at a glance
-Paper `#F4EFE6` · Night `#100D0A` · Walnut `#5B3D2B` · Brass `#A97F49`/`#C9A66B` · Ink `#201A14`
-Type: Fraunces Variable 500 (display, italic accents) + Inter Variable (UI/body) · hero display `clamp(3.25rem,1rem+9vw,10.5rem)` · H1 5rem / H2 2.812rem / H3 1.875rem (style-guide spec)
+# APPENDIX B — Design tokens at a glance (Linoxa style guide)
+Light Beige `#FCF2E8` · Black `#000000` · Jet Black `#111111` · Deep Navy Blue `#0F1E36` (accent, on-dark tint `#7D93B8`) · Charcoal `#525252` · Silver `#C0C0C0` · Light Gray `#E3E1E1` · Deep Gray `#D9D9D9`
+Type: Sora Variable 500 (display, no italics) + Inter Variable (UI/body) · hero display `clamp(3.25rem,1rem+9vw,10.5rem)` · H1 5rem/112.5% · H2 2.812rem/122% · H3 1.875rem/133% · H4 1.562rem · H5 1.25rem · H6 1.125rem · body 1rem/162% · sub 0.875rem/185% · button 0.9375rem/500
 Ease: `cubic-bezier(.22,1,.36,1)` · radius 14/26/pill · shadows small `0 4px 14px -6px` / medium card / large lift · section padding `clamp(5.5rem,4rem+7vw,11rem)`.
 Live system reference: `/style-guide`.

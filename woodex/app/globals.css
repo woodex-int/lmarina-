@@ -7,27 +7,30 @@
    ============================================================ */
 
 @theme {
-  /* ---- Color: warm wood-luxury system ---- */
-  --color-paper: #f4efe6;       /* warm bone / page base */
-  --color-paper-2: #ece4d6;     /* deeper sand */
-  --color-cream: #faf7f1;       /* cards on dark */
-  --color-sand: #d9cbb4;        /* muted borders on light */
-  --color-clay: #c4ad8c;        /* secondary warm */
-  --color-brass: #a97f49;       /* primary metallic accent */
-  --color-brass-soft: #c9a66b;
-  --color-walnut: #5b3d2b;      /* brand wood tone */
-  --color-walnut-deep: #3d2819;
-  --color-espresso: #17120d;    /* near-black warm */
-  --color-ink: #201a14;         /* body text */
-  --color-ink-soft: #6b6055;    /* muted paragraphs */
-  --color-fog: #8d8378;         /* captions */
-  --color-night: #100d0a;       /* dark sections */
-  --color-night-2: #1a150f;     /* raised dark surfaces */
-  --color-line: rgba(32, 26, 20, 0.14);
-  --color-line-light: rgba(244, 239, 230, 0.16);
+  /* ---- Color: Linoxa design-system palette (exact tokens) ----
+     Black #000000 · Jet Black #111111 · Deep Navy #0f1e36
+     Charcoal #525252 · Silver #c0c0c0 · Light Gray #e3e1e1
+     Deep Gray #d9d9d9 · Light Beige #fcf2e8 */
+  --color-paper: #fcf2e8;       /* Light Beige — page base */
+  --color-paper-2: #e3e1e1;     /* Light Gray */
+  --color-cream: #ffffff;       /* white cards / pills / inverted text */
+  --color-sand: #d9d9d9;        /* Deep Gray */
+  --color-clay: #c0c0c0;        /* Silver */
+  --color-brass: #0f1e36;       /* Deep Navy Blue (single accent role) */
+  --color-brass-soft: #7d93b8;  /* navy tint legible on black */
+  --color-walnut: #0f1e36;      /* brand emphasis = Deep Navy */
+  --color-walnut-deep: #0a1526; /* deeper navy band */
+  --color-espresso: #111111;    /* Jet Black */
+  --color-ink: #111111;         /* Jet Black — headings/strong text */
+  --color-ink-soft: #525252;    /* Charcoal Gray — body copy */
+  --color-fog: #8a8a8a;         /* captions (charcoal↔silven mid) */
+  --color-night: #000000;       /* Black */
+  --color-night-2: #111111;     /* Jet Black raised surfaces */
+  --color-line: rgba(17, 17, 17, 0.12);
+  --color-line-light: rgba(252, 242, 232, 0.16);
 
-  /* ---- Typography ---- */
-  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  /* ---- Typography (Linoxa style guide) ---- */
+  --font-display: 'Sora Variable', 'Sora', 'Inter', system-ui, sans-serif;
   --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Fluid type scale (clamp = mobile → desktop).
@@ -60,9 +63,9 @@
   --radius-m: 14px;
   --radius-l: 26px;
   --radius-pill: 999px;
-  --shadow-sm: 0 4px 14px -6px rgba(23, 18, 13, 0.18);
-  --shadow-card: 0 24px 60px -28px rgba(23, 18, 13, 0.35);
-  --shadow-lift: 0 40px 90px -35px rgba(23, 18, 13, 0.55);
+  --shadow-sm: 0 4px 14px -6px rgba(17, 17, 17, 0.16);
+  --shadow-card: 0 24px 60px -28px rgba(15, 30, 54, 0.28);
+  --shadow-lift: 0 40px 90px -35px rgba(15, 30, 54, 0.48);
 
   /* ---- Layout ---- */
   --container: 1480px;
@@ -78,7 +81,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scrollbar-width: thin;
-  scrollbar-color: var(--color-brass) var(--color-paper-2);
+  scrollbar-color: var(--color-walnut) var(--color-paper-2);
 }
 
 body {
@@ -89,10 +92,9 @@ body {
   line-height: 1.62;
   letter-spacing: -0.011em;
   overflow-x: clip;
-  font-feature-settings: 'ss01', 'cv11';
 }
 
-::selection { background: var(--color-walnut); color: var(--color-cream); }
+::selection { background: var(--color-walnut); color: #ffffff; }
 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -101,8 +103,7 @@ html.lenis, html.lenis body { height: auto; }
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
   font-weight: 500;
-  letter-spacing: -0.02em;
-  font-optical-sizing: auto;
+  letter-spacing: -0.03em;
   color: var(--color-espresso);
 }
 h1 { font-size: var(--text-h1); line-height: 1.125; }
@@ -115,10 +116,12 @@ h6 { font-size: var(--text-h6); font-weight: 400; line-height: 1.55; }
 .on-dark h1, .on-dark h2, .on-dark h3, .on-dark h4,
 .on-dark h1 em, .on-dark h2 em { color: var(--color-cream); }
 
-em, .serif-italic { font-style: italic; font-variation-settings: 'SOFT' 50; }
+/* Linoxa system is sans-only (Sora has no italic) — emphasis = navy + 500 */
+em, .serif-italic { font-style: normal; font-weight: 500; color: var(--color-walnut); }
+.on-dark em, .on-dark .serif-italic { color: var(--color-brass-soft); }
 
 p { color: var(--color-ink-soft); }
-.on-dark p { color: rgba(244, 239, 230, 0.72); }
+.on-dark p { color: rgba(252,242,232, 0.72); }
 
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
@@ -143,7 +146,7 @@ img { display: block; max-width: 100%; }
 .eyebrow.center::after { content: ''; width: 26px; height: 1px; background: var(--color-brass); }
 .on-dark .eyebrow { color: var(--color-brass-soft); }
 
-.display-xl { font-size: var(--text-display); line-height: 0.94; letter-spacing: -0.035em; font-weight: 400; }
+.display-xl { font-size: var(--text-display); line-height: 0.96; letter-spacing: -0.045em; font-weight: 500; }
 .h1 { font-size: var(--text-h1); }
 .h2 { font-size: var(--text-h2); }
 .h3 { font-size: var(--text-h3); }
@@ -181,7 +184,9 @@ img { display: block; max-width: 100%; }
 .btn:hover .btn-arrow { transform: translateX(3px); background: rgba(255,255,255,0.22); }
 .btn-light { --btn-bg: var(--color-cream); --btn-fg: var(--color-espresso); }
 .btn-light::after { background: var(--color-brass); }
-.btn-light .btn-arrow { background: rgba(23,18,13,0.1); }
+.btn-light:hover { color: #ffffff; }
+.btn-light:hover .btn-arrow { background: rgba(255,255,255,0.22); }
+.btn-light .btn-arrow { background: rgba(17,17,17,0.1); }
 .btn-outline { --btn-bg: transparent; --btn-fg: var(--color-espresso); border-color: var(--color-line); }
 .btn-outline::after { background: var(--color-espresso); }
 .btn-outline:hover { color: var(--color-cream); }
@@ -225,19 +230,19 @@ img { display: block; max-width: 100%; }
   border-radius: 50%; transform: translate(-50%, -50%);
   mix-blend-mode: difference;
 }
-.cursor-dot { width: 7px; height: 7px; background: #f4efe6; }
+.cursor-dot { width: 7px; height: 7px; background: #fcf2e8; }
 .cursor-ring {
-  width: 40px; height: 40px; border: 1px solid rgba(244,239,230,0.75);
+  width: 40px; height: 40px; border: 1px solid rgba(252,242,232,0.75);
   display: grid; place-items: center;
   transition: width 0.4s var(--ease-lux), height 0.4s var(--ease-lux), background 0.4s;
 }
-.cursor-ring[data-state='hover'] { width: 74px; height: 74px; background: rgba(244,239,230,0.12); }
+.cursor-ring[data-state='hover'] { width: 74px; height: 74px; background: rgba(252,242,232,0.12); }
 .cursor-ring .cursor-label {
   font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: #f4efe6; opacity: 0; transform: scale(0.6); transition: opacity 0.3s;
+  color: #fcf2e8; opacity: 0; transform: scale(0.6); transition: opacity 0.3s;
   font-weight: 600;
 }
-.cursor-ring[data-state='view'] { width: 88px; height: 88px; background: rgba(244,239,230,0.16); }
+.cursor-ring[data-state='view'] { width: 88px; height: 88px; background: rgba(252,242,232,0.16); }
 .cursor-ring[data-state='view'] .cursor-label { opacity: 1; transform: scale(1); }
 @media (hover: none), (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } }
 
@@ -249,7 +254,7 @@ img { display: block; max-width: 100%; }
 }
 .preloader-word { font-family: var(--font-display); color: var(--color-cream); font-size: clamp(1.75rem, 1rem + 3vw, 3rem); letter-spacing: -0.02em; overflow: hidden; }
 .preloader-count { font-family: var(--font-sans); font-variant-numeric: tabular-nums; color: var(--color-brass-soft); font-size: 0.875rem; letter-spacing: 0.2em; }
-.preloader-bar { height: 1px; background: rgba(244,239,230,0.15); width: min(280px, 60vw); overflow: hidden; }
+.preloader-bar { height: 1px; background: rgba(252,242,232,0.15); width: min(280px, 60vw); overflow: hidden; }
 .preloader-bar > span { display: block; height: 100%; width: 100%; background: var(--color-brass-soft); transform-origin: left; transform: scaleX(0); }
 
 /* ---- Marquee ---- */
@@ -302,7 +307,7 @@ img { display: block; max-width: 100%; }
 .field:focus { border-color: var(--color-walnut); }
 .field::placeholder { color: var(--color-fog); }
 .on-dark .field { color: var(--color-cream); border-color: var(--color-line-light); }
-.on-dark .field::placeholder { color: rgba(244,239,230,0.45); }
+.on-dark .field::placeholder { color: rgba(252,242,232,0.45); }
 
 /* accordion */
 .acc-item { border-top: 1px solid var(--color-line); }
@@ -316,7 +321,7 @@ img { display: block; max-width: 100%; }
 .acc-item.open .acc-icon { transform: rotate(45deg); }
 
 /* stat numbers */
-.stat-num { font-family: var(--font-display); font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem); line-height: 1; letter-spacing: -0.03em; color: var(--color-espresso); }
+.stat-num { font-family: var(--font-display); font-weight: 500; font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem); line-height: 1; letter-spacing: -0.04em; color: var(--color-espresso); }
 .on-dark .stat-num { color: var(--color-cream); }
 
 /* thin divider label */

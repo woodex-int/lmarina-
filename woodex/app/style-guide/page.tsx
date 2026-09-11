@@ -19,18 +19,14 @@ export const metadata: Metadata = {
 };
 
 const colors = [
-  { name: 'Paper', hex: '#F4EFE6' },
-  { name: 'Paper-2 / Sand base', hex: '#ECE4D6' },
-  { name: 'Cream', hex: '#FAF7F1', dark: true },
-  { name: 'Sand', hex: '#D9CBB4' },
-  { name: 'Clay', hex: '#C4AD8C' },
-  { name: 'Brass', hex: '#A97F49' },
-  { name: 'Brass soft', hex: '#C9A66B' },
-  { name: 'Walnut', hex: '#5B3D2B', dark: true },
-  { name: 'Walnut deep', hex: '#3D2819', dark: true },
-  { name: 'Espresso', hex: '#17120D', dark: true },
-  { name: 'Ink', hex: '#201A14', dark: true },
-  { name: 'Night', hex: '#100D0A', dark: true },
+  { name: 'Black', hex: '#000000', dark: true },
+  { name: 'Jet Black', hex: '#111111', dark: true },
+  { name: 'Deep Navy Blue', hex: '#0F1E36', dark: true },
+  { name: 'Charcoal Gray', hex: '#525252', dark: true },
+  { name: 'Silver', hex: '#C0C0C0' },
+  { name: 'Light Gray', hex: '#E3E1E1' },
+  { name: 'Deep Gray', hex: '#D9D9D9' },
+  { name: 'Light Beige', hex: '#FCF2E8' },
 ];
 
 const typeRows = [
@@ -125,9 +121,10 @@ export default function StyleGuidePage() {
                 ))}
               </div>
               <p className="sub-text mt-7 max-w-3xl">
-                Warm paper and bone replace generic grey-white; walnut is the brand hue and brass
-                the only accent. Ink on paper reaches ~11.8:1 contrast; cream on espresso ~14:1.
-                Click any swatch to copy its hex value.
+                The system is built on Light Beige with Jet Black type and Charcoal body copy;
+                Deep Navy Blue is the single accent, with Light/Deep Gray and Silver carrying
+                borders, muted surfaces and on-dark captions. Black is reserved for the preloader
+                and deepest bands. Click any swatch to copy its hex value.
               </p>
             </div>
           </Fade>
@@ -138,6 +135,11 @@ export default function StyleGuidePage() {
           <SectionTag id="typography" icon={Type}>Typography</SectionTag>
           <Fade>
             <div className="sg-panel overflow-x-auto">
+              <p className="sub-text mb-8">
+                Display type is <strong>Sora Variable</strong> (weights 400–700, headings at 500);
+                body, UI and metadata use <strong>Inter Variable</strong>. Both are self-hosted
+                with <span className="mono">font-display: swap</span>.
+              </p>
               <table className="sg-table mb-10 min-w-[640px]">
                 <thead>
                   <tr><th>Token</th><th>Size</th><th>Line height</th><th>Weight</th></tr>
@@ -161,7 +163,7 @@ export default function StyleGuidePage() {
                 {typeRows.map((r) => (
                   <div key={r.spec} className="grid grid-cols-[70px_1fr] items-baseline gap-4 border-b border-[var(--color-line)] pb-5 md:grid-cols-[110px_1fr]">
                     <span className="mono text-xs text-[var(--color-fog)]">{r.spec}</span>
-                    <span className={r.cls}>{r.text}{r.spec === 'H1' && <em className="serif-italic text-[var(--color-walnut)]"> crafted in wood</em>}</span>
+                    <span className={r.cls}>{r.text}{r.spec === 'H1' && <em className="text-[var(--color-walnut)]"> shaped by identity</em>}</span>
                   </div>
                 ))}
                 <div className="grid grid-cols-[70px_1fr] gap-4 md:grid-cols-[110px_1fr]">
@@ -194,9 +196,9 @@ export default function StyleGuidePage() {
           <Fade>
             <div className="sg-panel grid grid-cols-1 gap-6 md:grid-cols-3">
               {[
-                { name: 'Small', cls: 'shadow-[var(--shadow-sm)]', copy: '0 4px 14px -6px rgba(23,18,13,.18)' },
-                { name: 'Medium', cls: 'shadow-[var(--shadow-card)]', copy: '0 24px 60px -28px rgba(23,18,13,.35)' },
-                { name: 'Large', cls: 'shadow-[var(--shadow-lift)]', copy: '0 40px 90px -35px rgba(23,18,13,.55)' },
+                { name: 'Small', cls: 'shadow-[var(--shadow-sm)]', copy: '0 4px 14px -6px rgba(17,17,17,.16)' },
+                { name: 'Medium', cls: 'shadow-[var(--shadow-card)]', copy: '0 24px 60px -28px rgba(15,30,54,.28)' },
+                { name: 'Large', cls: 'shadow-[var(--shadow-lift)]', copy: '0 40px 90px -35px rgba(15,30,54,.48)' },
               ].map((s) => (
                 <div key={s.name} className="rounded-[var(--radius-m)] bg-[var(--color-paper)] p-8 text-center">
                   <div className={`mx-auto mb-7 h-24 w-24 rounded-2xl bg-[var(--color-cream)] ${s.cls}`} />
@@ -260,7 +262,7 @@ export default function StyleGuidePage() {
                 </div>
               </div>
               <div className="on-dark -mx-4 rounded-[var(--radius-l)] bg-[var(--color-night)] p-8 md:-mx-10">
-                <p className="idx-label mb-5 !text-[#8d8378]">On dark — light &amp; outline-light</p>
+                <p className="idx-label mb-5 !text-[#8f98a6]">On dark — light &amp; outline-light</p>
                 <div className="flex flex-wrap items-center gap-4">
                   <Link href="/contact" className="btn btn-light"><span className="btn-label">Button style one</span><span className="btn-arrow"><ArrowUpRight size={14} /></span></Link>
                   <Link href="/projects" className="btn btn-outline-light"><span className="btn-label">Button style two</span><span className="btn-arrow"><ArrowUpRight size={14} /></span></Link>
