@@ -199,7 +199,10 @@ Film grain (animated SVG turbulence, fixed, 5% opacity), warm radial glows per s
 ## 13. Sitemap & page inventory
 
 ```
-/                              Home — Linoxa home-two replica (14 acts)
+/                              Home — Linoxa home-two replica (16 acts, incl. Layout/Design/Create
+                               micro-bar + Building documentation pack section)
+/pricing                       Packages & pricing (Linoxa pricing-one equivalent):
+                               Concept / Studio / Atelier tiers, PKR/sq ft, stats, pricing FAQ schema
 /about                         Studio story, values, stats, process, FAQ
 /services                      Full-suite index (6 services, alternating cards)
 /services/office-interior-design        ★ Flagship, full SEO + FAQ schema
@@ -433,7 +436,7 @@ Ranked by **impact on perceived quality**:
 - [ ] Phase 2 WebGL hero behind feature flag with 2.5D poster fallback (§11.2)
 
 ## 30. Delivery roadmap
-- **PHASE 1 — Foundation (this delivery):** design system, Linoxa home-two replica, 6 complete service pages, about/projects/journal/contact, full motion system, SEO base, 10 generated images. ✅
+- **PHASE 1 — Foundation (this delivery):** design system, Linoxa home-two replica at full structural parity (hero → statements → **Layout/Design/Create bar** → marquees → partners → service index + big feature + pills → **building documentation pack** → image collage → icon trio → big marquee → sticky about → process → testimonials → journal → CTA), 6 complete service pages, **packages/pricing page**, about/projects/journal/contact, full motion system, SEO base, 10 generated images. ✅
 - **PHASE 2 — Proof & conversion (2–4 wks):** case-study CMS/collection + `/projects/[slug]`; real photography swap; WebGL hero (R3F, flag-gated); floating WhatsApp; CRM-connected form; budget/timeline lead-magnet; GBP & citations; profile PDF; next 6 journal articles.
 - **PHASE 3 — Scale (6–12 wks):** location & house-size landing pages; Urdu language toggle; image-sequence case stories; Google Ads landing variants + A/B CTA test (§20 ranking); review schema; careers; booking calendar.
 

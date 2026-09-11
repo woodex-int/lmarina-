@@ -44,6 +44,11 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/pricing" className="transition-colors hover:text-[var(--color-brass-soft)]">
+                  Packages &amp; pricing
+                </Link>
+              </li>
             </ul>
           </div>
 

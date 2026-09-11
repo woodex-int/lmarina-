@@ -39,8 +39,8 @@ export default function ServicesPage() {
             <span className="btn-label">Book free consultation</span>
             <span className="btn-arrow"><ArrowUpRight size={14} /></span>
           </Link>
-          <Link href="/projects" className="btn btn-outline">
-            <span className="btn-label">See completed work</span>
+          <Link href="/pricing" className="btn btn-outline">
+            <span className="btn-label">Packages &amp; pricing</span>
             <span className="btn-arrow"><ArrowUpRight size={14} /></span>
           </Link>
         </div>
