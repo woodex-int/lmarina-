@@ -4,7 +4,7 @@ import { services } from '@/lib/services';
 import { projects, posts } from '@/lib/content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/about', '/services', '/pricing', '/projects', '/journal', '/contact'].map((p) => ({
+  const staticRoutes = ['', '/about', '/services', '/3d-studio', '/pricing', '/projects', '/journal', '/contact'].map((p) => ({
     url: `${site.url}${p}`,
     changeFrequency: 'monthly' as const,
     priority: p === '' ? 1 : 0.8,

@@ -301,3 +301,41 @@ export const clients = [
   'Ember Roasters', 'The Grove', 'Maison Atelier', 'Alyoum Foods',
   'Pine Enclave', 'Sapphire 7AK',
 ];
+
+/* Home FAQ band (reference: navy FAQ section) */
+export const homeFaqs = [
+  {
+    q: 'How do we approach complex spaces?',
+    a: 'Through structured research and strategic planning: site survey, how every person actually uses the room, adjacencies, acoustics and growth headroom. Design decisions stay focused, measurable and answerable to a brief — not to taste alone.',
+  },
+  {
+    q: 'What value does a Woodex fit-out create?',
+    a: 'Offices that recruit and retain, retail that converts more visitors, homes that age gracefully. Beyond aesthetics we measure acceptance of offers, time-to-occupancy, and how often budgets move — on our projects, the BOQ never does.',
+  },
+  {
+    q: 'How is each engagement customised?',
+    a: 'Every project starts with a free site visit and a scope ladder: consultation-only, design-and-document, or full turnkey with our workshop building the joinery. You choose the level of accountability that fits your team and timeline.',
+  },
+  {
+    q: 'How do we manage risk on site?',
+    a: 'Before construction: complete drawings, a fixed BOQ, long-lead procurement list and a dated Gantt. During: weekly site reports, snag registers and single-point accountability. If something moves, you hear it from us first — with the recovery plan attached.',
+  },
+  {
+    q: 'What makes the studio trustworthy?',
+    a: 'Twelve years, 240+ delivered spaces, and a workshop that still builds our own joinery. We publish material, pricing and timeline standards, hand over warranties as a written file, and 94% of new work comes from returning clients and referrals.',
+  },
+];
+
+/* Client blurbs for the navy partners grid */
+export const clientNotes: Record<string, { note: string; field: string }> = {
+  'Meridian Capital': { note: 'A 14-seat boardroom, quiet client corridor and a reception that opens meetings before the pitch deck does — delivered across two floors in 16 weeks.', field: 'Financial HQ · Gulberg' },
+  'Northwind': { note: 'An 18,000 sq ft technology floor: acoustic slat ceilings, focus booths and a town-hall breakout for 120 engineers.', field: 'Technology · Jail Road' },
+  'Kindle Works': { note: 'Flexible membership campus with timber pods, velvet lounges and a cafe-style collaboration core that doubled desk revenue per sq ft.', field: 'Coworking · Orchard' },
+  'Q-Links Group': { note: 'Group head office consolidating four departments into one address — strategy, test-fits, demolition and turnkey build under a single contract.', field: 'Industrial head office' },
+  'Ember Roasters': { note: 'Oak-slatted cafe and roastery with communal tables and leather banquettes; the counter was designed and built in our workshop.', field: 'Hospitality · Gulberg II' },
+  'The Grove': { note: 'Double-height arrival hall with backlit stone, oak slat ceiling and a sculptural pendant installation.', field: 'Hotel lobby · DHA Phase 6' },
+  'Maison Atelier': { note: 'A timber-and-brass fashion boutique planned around one unbroken customer loop and a power wall.', field: 'Retail · Mall Road' },
+  'Alyoum Foods': { note: 'Executive suite and tasting boardroom for a national FMCG — warmth without losing corporate gravity.', field: 'FMCG · Lahore' },
+  'Pine Enclave': { note: 'Show residences and sales gallery for a gated community; everything specified to survive daily family tours.', field: 'Developer · Bahria Town' },
+  'Sapphire 7AK': { note: 'Bridal showroom with museum-grade lighting and fitting-room acoustics, delivered in a phased night-shift schedule.', field: 'Retail · Faisalabad' },
+};

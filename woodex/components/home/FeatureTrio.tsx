@@ -1,49 +1,87 @@
 'use client';
 
-import { Armchair, Compass, Box } from 'lucide-react';
-import { Fade, SplitReveal } from '@/components/Motion';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { SplitReveal, Fade, ClipReveal } from '@/components/Motion';
 
-const features = [
-  {
-    icon: Armchair,
-    title: 'Interior design',
-    copy: 'Complete spatial and material design for offices, homes and retail — modern clarity grounded in warm, lasting material.',
-  },
-  {
-    icon: Compass,
-    title: 'Consultation & strategy',
-    copy: 'Workplace strategy, test-fit options, budget tracks and honest feasibility advice before you commit a rupee.',
-  },
-  {
-    icon: Box,
-    title: '3D modeling',
-    copy: 'Photoreal renders and walkthroughs built from the real materials we specify — approval before construction, not after.',
-  },
+const ROWS = [
+  { label: 'Residential design solutions', href: '/services/residential-interior-design' },
+  { label: 'Office & workplace strategy', href: '/services/office-interior-design' },
+  { label: 'Master planning & turnkey build', href: '/services/turnkey-design-build' },
 ];
 
 export default function FeatureTrio() {
   return (
-    <section className="on-dark bg-[var(--color-night)] py-[var(--spacing-section)] text-[var(--color-cream)]">
-      <div className="container-x">
-        <div className="mb-16 max-w-3xl">
-          <Fade><span className="eyebrow mb-6">Capabilities</span></Fade>
-          <SplitReveal as="h2" className="h2 text-balance">
-            Three disciplines, one accountable studio
-          </SplitReveal>
+    <section className="band-gray py-[var(--spacing-section)]">
+      <div className="container-x grid grid-cols-12 gap-5">
+        {/* big image */}
+        <div className="col-span-12 lg:col-span-5">
+          <ClipReveal className="img-zoom h-full min-h-[340px]">
+            <div className="img-round-lg relative h-full min-h-[340px]">
+              <Image
+                src="/images/gallery-lobby.jpg"
+                alt="Double-height hotel lobby with backlit stone and oak slat ceiling"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+            </div>
+          </ClipReveal>
         </div>
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-[var(--radius-l)] border border-[var(--color-line-light)] bg-[var(--color-line-light)] md:grid-cols-3">
-          {features.map((f, i) => (
-            <Fade key={f.title} delay={i * 0.12}>
-              <div className="group flex h-full flex-col gap-6 bg-[var(--color-night)] p-10 transition-colors duration-500 hover:bg-[var(--color-night-2)] md:p-12">
-                <div className="grid h-14 w-14 place-items-center rounded-full border border-[var(--color-line-light)] text-[var(--color-brass-soft)] transition-all duration-500 group-hover:rotate-[8deg] group-hover:border-[var(--color-brass)]">
-                  <f.icon size={22} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-[family-name:var(--font-display)] text-2xl">{f.title}</h3>
-                <p className="text-sm leading-relaxed text-[var(--color-cream)]/65">{f.copy}</p>
-                <span className="mt-auto pt-4 text-xs uppercase tracking-[0.22em] text-[var(--color-brass-soft)]">0{i + 1}</span>
-              </div>
-            </Fade>
-          ))}
+
+        {/* heading card */}
+        <div className="col-span-12 sm:col-span-8 lg:col-span-4">
+          <div className="card-white h-full p-8">
+            <SplitReveal as="h2" className="h3 text-balance">
+              Creating timeless built environments
+            </SplitReveal>
+          </div>
+        </div>
+
+        {/* CTA card */}
+        <div className="col-span-12 sm:col-span-4 lg:col-span-3">
+          <div className="card-white flex h-full items-start justify-end p-8">
+            <Link href="/services" className="btn">
+              <span className="btn-label">Explore our services</span>
+              <span className="btn-arrow"><ArrowUpRight size={14} /></span>
+            </Link>
+          </div>
+        </div>
+
+        {/* bottom bento: copy + links + image */}
+        <div className="col-span-12 lg:col-span-7">
+          <div className="card-white flex h-full flex-col justify-between gap-8 p-8 lg:p-10">
+            <p className="max-w-2xl text-[0.95rem] leading-relaxed">
+              Our interiors reflect a balance of creativity and precision — spaces that respond to
+              context, elevate daily life, and stand as lasting symbols of craft. Every Woodex
+              environment is designed, detailed and delivered by one accountable studio.
+            </p>
+            <div>
+              {ROWS.map((r) => (
+                <Link key={r.label} href={r.href} className="link-row">
+                  <span>{r.label}</span>
+                  <ArrowUpRight size={16} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* side image */}
+        <div className="col-span-12 sm:col-span-5 lg:col-span-5">
+          <div className="card-white h-full p-6">
+            <div className="img-round img-zoom relative aspect-[4/3]">
+              <Image
+                src="/images/service-3d.jpg"
+                alt="3D walkthrough render and material samples on the studio desk"
+                fill
+                sizes="(max-width: 1024px) 90vw, 38vw"
+                className="object-cover"
+              />
+            </div>
+            <p className="idx-label mt-4">Approved on screen — then built</p>
+          </div>
         </div>
       </div>
     </section>

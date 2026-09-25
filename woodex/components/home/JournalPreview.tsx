@@ -28,7 +28,7 @@ export default function JournalPreview() {
         {posts.map((p, i) => (
           <Fade key={p.slug} delay={i * 0.1}>
             <Link href={`/journal/${p.slug}`} className="group block" data-cursor-label="Read">
-              <ClipReveal className="img-zoom relative aspect-[4/3] overflow-hidden rounded-[var(--radius-m)]">
+              <ClipReveal className="img-zoom relative aspect-[4/3] overflow-hidden rounded-[26px]">
                 <Image src={p.image} alt={p.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
               </ClipReveal>
               <div className="mt-5 flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-[var(--color-fog)]">

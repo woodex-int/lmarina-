@@ -1,39 +1,73 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { processSteps } from '@/lib/content';
 import { SplitReveal, Fade } from '@/components/Motion';
 import CTA from '@/components/CTA';
 
 export default function Process() {
   return (
-    <section className="container-x py-[var(--spacing-section)]">
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:items-end">
-        <div className="md:col-span-8">
-          <Fade><span className="eyebrow mb-6">How a Woodex project runs</span></Fade>
-          <SplitReveal as="h2" className="h2 text-balance">
-            Five calm, documented steps from first visit to handover
-          </SplitReveal>
+    <section className="band-gray py-[var(--spacing-section)]">
+      <div className="container-x grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
+        {/* sticky intro */}
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-28">
+            <Fade><span className="eyebrow mb-6">How a Woodex project runs</span></Fade>
+            <SplitReveal as="h2" className="h2 text-balance">
+              Organized, documented, delivered on a date
+            </SplitReveal>
+            <Fade delay={0.12}>
+              <div className="img-round img-zoom relative mt-9 aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/service-turnkey.jpg"
+                  alt="Woodex site team coordinating a turnkey office fit-out"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-cover"
+                />
+              </div>
+              <p className="mt-6 text-[0.92rem] leading-relaxed">
+                We blend strategic foresight and meticulous coordination into structured project
+                roadmaps that align stakeholders, streamline timelines, and drive every initiative
+                toward measurable outcomes — with confidence.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <CTA variant="outline">Start with step one</CTA>
+                <Link href="/projects" className="btn">
+                  <span className="btn-label">Our projects</span>
+                  <span className="btn-arrow"><ArrowUpRight size={14} /></span>
+                </Link>
+              </div>
+            </Fade>
+          </div>
         </div>
-        <div className="md:col-span-3 md:col-start-10">
-          <Fade delay={0.1}>
-            <CTA variant="outline">Start with step one</CTA>
-          </Fade>
-        </div>
-      </div>
 
-      <div className="mt-16">
-        {processSteps.map((s, i) => (
-          <Fade key={s.step} delay={i * 0.05}>
-            <div className="group grid grid-cols-12 items-start gap-4 border-t border-[var(--color-line)] py-10 last:border-b md:gap-8 md:py-12">
-              <span className="col-span-3 text-sm text-[var(--color-fog)] md:col-span-2">{s.step}</span>
-              <h3 className="col-span-9 font-[family-name:var(--font-display)] text-[clamp(1.5rem,3vw,2.4rem)] leading-tight transition-transform duration-500 group-hover:translate-x-2 md:col-span-3" style={{ transitionTimingFunction: 'var(--ease-lux)' }}>
-                {s.title}
-              </h3>
-              <span className="col-span-6 col-start-4 text-xs uppercase tracking-[0.18em] text-[var(--color-walnut)] md:col-span-2 md:col-start-6">{s.duration}</span>
-              <p className="col-span-12 max-w-xl text-[0.95rem] md:col-span-5 md:col-start-8">{s.copy}</p>
-            </div>
-          </Fade>
-        ))}
+        {/* list rows */}
+        <div className="lg:col-span-7 lg:col-start-5">
+          <div className="overflow-hidden rounded-[var(--radius-l)]">
+            {processSteps.map((s, i) => (
+              <Fade key={s.step} delay={i * 0.05}>
+                <div className="num-row group grid grid-cols-[auto_1fr_auto] items-center gap-5 px-6 py-7 lg:px-8">
+                  <span className="grid h-11 w-11 place-items-center rounded-full border border-[var(--color-line)] transition-all duration-500 group-hover:border-transparent group-hover:bg-[var(--color-brass)] group-hover:text-[var(--color-cream)]">
+                    <ArrowLeft size={15} className="transition-transform duration-500 group-hover:rotate-[24deg]" />
+                  </span>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-display)] text-[1.3rem] leading-snug lg:text-[1.55rem]">
+                      {s.title}
+                    </h3>
+                    <p className="mt-1.5 max-w-xl text-[0.85rem] leading-relaxed text-[var(--color-fog)]">{s.copy}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-[family-name:var(--font-display)] text-[1.3rem] font-medium lg:text-[1.6rem]">{s.step}</span>
+                    <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-[var(--color-walnut)]">{s.duration}</p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

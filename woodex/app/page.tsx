@@ -1,16 +1,17 @@
 import Hero from '@/components/home/Hero';
-import Statements from '@/components/home/Statements';
-import PlanDesignCreate from '@/components/home/PlanDesignCreate';
 import WordMarquee from '@/components/home/WordMarquee';
-import Partners from '@/components/home/Partners';
-import ServicesSection from '@/components/home/ServicesSection';
 import Documentation from '@/components/home/Documentation';
-import Collage from '@/components/home/Collage';
+import ServicesSection from '@/components/home/ServicesSection';
+import Partners from '@/components/home/Partners';
+import Statements from '@/components/home/Statements';
 import FeatureTrio from '@/components/home/FeatureTrio';
 import BigMarquee from '@/components/home/BigMarquee';
-import AboutScroll from '@/components/home/AboutScroll';
+import Collage from '@/components/home/Collage';
+import PlanDesignCreate from '@/components/home/PlanDesignCreate';
 import Process from '@/components/home/Process';
+import AboutScroll from '@/components/home/AboutScroll';
 import Testimonials from '@/components/home/Testimonials';
+import FaqBand from '@/components/home/FaqBand';
 import JournalPreview from '@/components/home/JournalPreview';
 import CtaBand from '@/components/CtaBand';
 
@@ -18,18 +19,19 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Statements />
-      <PlanDesignCreate />
       <WordMarquee />
-      <Partners />
-      <ServicesSection />
       <Documentation />
-      <Collage />
+      <ServicesSection />
+      <Partners />
+      <Statements />
       <FeatureTrio />
       <BigMarquee />
-      <AboutScroll />
+      <Collage />
+      <PlanDesignCreate />
       <Process />
+      <AboutScroll />
       <Testimonials />
+      <FaqBand />
       <JournalPreview />
       <CtaBand />
     </>

@@ -7,7 +7,7 @@ const socialIcons: Record<string, any> = { instagram: Instagram, facebook: Faceb
 
 export default function Footer() {
   return (
-    <footer className="on-dark relative overflow-hidden bg-[var(--color-night)] text-[var(--color-cream)]">
+    <footer className="on-dark relative overflow-hidden bg-[var(--color-brass)] text-[var(--color-cream)]">
       <div className="container-x border-t border-[var(--color-line-light)] pt-20 pb-10">
         <div className="grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div className="col-span-2 lg:col-span-1">

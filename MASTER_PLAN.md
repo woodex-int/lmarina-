@@ -473,3 +473,36 @@ Light Beige `#FCF2E8` · Black `#000000` · Jet Black `#111111` · Deep Navy Blu
 Type: Sora Variable 500 (display, no italics) + Inter Variable (UI/body) · hero display `clamp(3.25rem,1rem+9vw,10.5rem)` · H1 5rem/112.5% · H2 2.812rem/122% · H3 1.875rem/133% · H4 1.562rem · H5 1.25rem · H6 1.125rem · body 1rem/162% · sub 0.875rem/185% · button 0.9375rem/500
 Ease: `cubic-bezier(.22,1,.36,1)` · radius 14/26/pill · shadows small `0 4px 14px -6px` / medium card / large lift · section padding `clamp(5.5rem,4rem+7vw,11rem)`.
 Live system reference: `/style-guide`.
+
+---
+
+## 24. REDESIGN v2 — Reference-led band system (approved by client)
+
+Source: 28 reference screenshots of the Linoxa template (home variants, inner pages, style guide).
+Decisions locked with the client before implementation:
+
+1. **Hero** — reference treatment: dusk-darkened full-bleed interior image, vertical hairline
+   columns, rotating micro-eyebrow, big white Sora H1, white pill CTA, giant white→silver
+   gradient ghost word (**WOOD**) dissolving at the bottom edge, floating frosted glass card
+   with a 3-image render carousel linking to `/3d-studio`.
+2. **Background distribution — 80% light / 20% Deep Navy.** Body sections live on Light Beige,
+   white and Light Gray cards; Deep Navy `#0F1E36` carries the Partners grid, 3D coverflow,
+   capability split, FAQ and closing CTA card. No two adjacent full-bleed navy bands. Jet Black
+   remains only in the preloader and mega-menu.
+3. **3D Studio** — new top-level route `/3d-studio` (nav-linked): navy hero with ghost word
+   "RENDER", deliverables trio, Render-vs-Reality comparison, 5-step pipeline list, navy gallery
+   with glass captions, PKR packages, FAQ, CTA band.
+4. **Imagery** — the 10 existing generated images are reused; framing changes to the reference
+   language: rounded cards (26 px), glass chips, coverflow, duotone dusk wash on the hero.
+
+Section grammar (all pages): eyebrow → Sora H2 (500, -0.03em) → charcoal lead → navy pill CTA;
+cards are radius-26 with no borders on light and 14%-alpha borders on navy; link rows carry a
+bottom hairline and a diagonal arrow; hover = white card lift (light) or 6%-alpha wash (dark).
+
+Homepage sequence (16 acts): Hero · WordMarquee · Documentation 3-col (hover white-card feature
+rows) · ServicesTrio (fill/white/navy) · Partners (logo-tile grid + swap panel) · Statements
+bento (stat/avatars/navy tile) · FeatureTrio bento (white cards on gray) · StatsBand (4-up with
+one navy column) · Collage 3D coverflow · PlanDesignCreate checklist w/ overlapping images ·
+Process capability rows (hover highlight) · AboutScroll split (navy image panel / gray links) ·
+Testimonials (light card grid, review chip) · FaqBand (navy boxed accordion) · JournalPreview ·
+CtaBand (studio-film chip + navy banner).

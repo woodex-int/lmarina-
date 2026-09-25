@@ -3,78 +3,69 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { SplitReveal, Fade, ClipReveal, Parallax, Counter } from '@/components/Motion';
-import { stats } from '@/lib/content';
+import { SplitReveal, Fade, ClipReveal } from '@/components/Motion';
+
+const ROWS = [
+  { label: 'Residential design solutions', href: '/services/residential-interior-design' },
+  { label: 'Turnkey project management', href: '/services/turnkey-design-build' },
+  { label: 'Furniture & joinery experts', href: '/services/custom-solid-wood-furniture' },
+];
 
 export default function AboutScroll() {
   return (
-    <section className="container-x py-[var(--spacing-section)]">
-      <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
-        {/* sticky visual */}
-        <div className="relative lg:col-span-6">
-          <div className="lg:sticky lg:top-28">
-            <ClipReveal className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-l)] shadow-[var(--shadow-card)]">
-              <Parallax speed={0.08}>
-                <div className="relative h-[115%] w-full">
-                  <Image
-                    src="/images/about-studio.jpg"
-                    alt="Woodex design studio team reviewing wood and marble material samples"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 46vw"
-                    className="object-cover"
-                  />
-                </div>
-              </Parallax>
-            </ClipReveal>
-
-            {/* floating scroll card */}
-            <Fade delay={0.2}>
-              <div className="absolute -bottom-8 -right-2 w-[min(78%,290px)] rounded-2xl bg-[var(--color-cream)] p-6 shadow-[var(--shadow-lift)] md:-right-8">
-                <p className="idx-label mb-3">Strategic planning</p>
-                <p className="font-[family-name:var(--font-display)] text-xl leading-snug">
-                  Designed for how your space is used every single day
-                </p>
-                <Link href="/about" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-walnut)]">
-                  Meet the studio <ArrowUpRight size={14} />
-                </Link>
-              </div>
-            </Fade>
+    <section className="grid grid-cols-1 lg:grid-cols-2">
+      {/* left navy panel with image card */}
+      <div className="band-navy on-dark relative flex min-h-[420px] items-center justify-center px-[var(--spacing-gutter)] py-20 lg:min-h-[640px]">
+        <ClipReveal className="img-zoom w-full max-w-[460px]">
+          <div className="img-round-lg relative aspect-[4/5] overflow-hidden shadow-[0_60px_140px_-50px_rgba(0,0,0,0.9)]">
+            <Image
+              src="/images/service-retail.jpg"
+              alt="Retail and commercial interiors crafted by Woodex"
+              fill
+              sizes="(max-width: 1024px) 100vw, 34vw"
+              className="object-cover"
+            />
           </div>
-        </div>
+        </ClipReveal>
+        <span className="idx-label absolute bottom-8 left-[var(--spacing-gutter)] !text-[rgba(252,242,232,0.55)]">01 — Commercial</span>
+      </div>
 
-        {/* copy + stats */}
-        <div className="flex flex-col justify-center lg:col-span-6 lg:pl-8">
-          <Fade><span className="eyebrow mb-6">The studio</span></Fade>
-          <SplitReveal as="h2" className="h2 mb-8 text-balance">
-            A design studio that still behaves like a workshop
+      {/* right light panel */}
+      <div className="band-gray relative overflow-hidden px-[var(--spacing-gutter)] py-20 lg:py-24">
+        <div className="mx-auto flex h-full max-w-xl flex-col justify-center">
+          <Fade><span className="eyebrow mb-6">Commercial & residential</span></Fade>
+          <SplitReveal as="h2" className="h2 text-balance">
+            Commercial architecture and space solutions for Lahore
           </SplitReveal>
-          <Fade>
-            <p className="lead mb-5">
-              Woodex began at a workbench in 2014, building solid-wood furniture for clients who
-              kept asking one question: &ldquo;can you do the whole room?&rdquo; Today we design
-              offices, homes and retail environments across Pakistan — and the workshop still
-              sits at the centre of how we think.
-            </p>
-          </Fade>
           <Fade delay={0.1}>
-            <p className="mb-10 max-w-xl">
-              That origin explains the difference. We know what timber costs, how veneer is
-              matched, how long joinery genuinely takes — so our budgets are honest, our details
-              are buildable, and nothing on a drawing is left to &ldquo;site decision&rdquo;.
+            <p className="mt-6 max-w-lg text-[0.95rem] leading-relaxed">
+              Creating meaningful environments through modern design, precision detailing and a
+              refined material vision — from mall-road boutiques to DHA living rooms.
             </p>
+            <Link href="/services" className="btn mt-8">
+              <span className="btn-label">Explore our services</span>
+              <span className="btn-arrow"><ArrowUpRight size={14} /></span>
+            </Link>
           </Fade>
-
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 border-t border-[var(--color-line)] pt-10">
-            {stats.map((s, i) => (
-              <Fade key={s.label} delay={i * 0.08}>
-                <p className="stat-num">
-                  <Counter to={parseInt(s.value, 10)} suffix={s.suffix} />
-                </p>
-                <p className="mt-2 text-sm text-[var(--color-ink-soft)]">{s.label}</p>
+          <div className="mt-12">
+            {ROWS.map((r, i) => (
+              <Fade key={r.label} delay={0.06 * i}>
+                <Link href={r.href} className="link-row">
+                  <span>{r.label}</span>
+                  <ArrowUpRight size={16} />
+                </Link>
               </Fade>
             ))}
           </div>
         </div>
+        {/* peek image */}
+        <Fade delay={0.2}>
+          <div className="img-round img-zoom absolute -bottom-0 right-8 hidden w-[230px] overflow-hidden shadow-[var(--shadow-lift)] lg:block">
+            <div className="relative aspect-[4/3]">
+              <Image src="/images/service-residential.jpg" alt="Residential project corner" fill sizes="230px" className="object-cover" />
+            </div>
+          </div>
+        </Fade>
       </div>
     </section>
   );

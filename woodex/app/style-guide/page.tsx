@@ -130,6 +130,41 @@ export default function StyleGuidePage() {
           </Fade>
         </section>
 
+        {/* SECTION BANDS — 80/20 rule */}
+        <section>
+          <SectionTag id="bands" icon={Palette}>Section bands · 80 / 20</SectionTag>
+          <Fade>
+            <div className="sg-panel">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="overflow-hidden rounded-[var(--radius-m)] border border-[var(--color-line)]">
+                  <div className="band-beige px-6 py-8">
+                    <p className="font-[family-name:var(--font-display)] text-[1.3rem]">Light bands — 80%</p>
+                    <p className="mt-2 text-sm text-[var(--color-ink-soft)]">
+                      Light Beige pages, white & Light-Gray cards, charcoal body copy. Every hero,
+                      service, bento, checklist and journal section sits on light.
+                    </p>
+                  </div>
+                </div>
+                <div className="overflow-hidden rounded-[var(--radius-m)] border border-[var(--color-line)]">
+                  <div className="band-navy on-dark px-6 py-8">
+                    <p className="font-[family-name:var(--font-display)] text-[1.3rem] !text-[var(--color-cream)]">Deep Navy bands — 20%</p>
+                    <p className="mt-2 text-sm text-[rgba(252,242,232,0.75)]">
+                      Partners, 3D coverflow, FAQ and closing CTA. One brand color for every dark
+                      moment; Jet Black is reserved for the preloader and mega-menu only.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p className="sub-text mt-7 max-w-3xl">
+                Distribution rule: alternate roughly one navy band in every three sections, never
+                two adjacent full-bleed bands, and always close with the navy CTA card on beige.
+                Giant ghost words (white → silver gradient), vertical hairlines and frosted glass
+                cards are the signature overlays on dark moments.
+              </p>
+            </div>
+          </Fade>
+        </section>
+
         {/* TYPOGRAPHY */}
         <section>
           <SectionTag id="typography" icon={Type}>Typography</SectionTag>

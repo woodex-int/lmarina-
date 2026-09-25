@@ -1,68 +1,82 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight, Check } from 'lucide-react';
+import { SplitReveal, Fade, ClipReveal } from '@/components/Motion';
 
-if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
-
-const STEPS = [
-  { n: '01', label: 'Layout', sub: 'Space planning', copy: 'Test-fits, adjacency and circulation — the plan every material decision answers to.' },
-  { n: '02', label: 'Design', sub: 'Materials & 3D', copy: 'Warm material systems detailed in photoreal renders before anything is ordered.' },
-  { n: '03', label: 'Create', sub: 'Build & craft', copy: 'Fit-out on site and solid-wood furniture in our workshop, on one timeline.' },
+const CHECKS = [
+  {
+    title: 'Structural & site assessments',
+    copy: 'We survey slabs, columns, services and light paths before designing — so stability, safety and long-term performance are engineered in, not discovered on site.',
+  },
+  {
+    title: 'Functional space planning',
+    copy: 'Efficient layouts that maximize usability, flow and comfort — every adjacency aligned with how your team or family actually lives, measured against the brief.',
+  },
 ];
 
 export default function PlanDesignCreate() {
-  const root = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.pdc-step',
-        { autoAlpha: 0, y: 40 },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 1,
-          stagger: 0.14,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: root.current, start: 'top 82%' },
-        }
-      );
-      gsap.fromTo(
-        '.pdc-line',
-        { scaleX: 0 },
-        {
-          scaleX: 1,
-          duration: 1.6,
-          ease: 'power3.inOut',
-          scrollTrigger: { trigger: root.current, start: 'top 75%' },
-        }
-      );
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={root} className="container-x py-16 md:py-24">
-      <div className="grid grid-cols-1 gap-y-12 md:grid-cols-3 md:gap-10">
-        {STEPS.map((s) => (
-          <div key={s.n} className="pdc-step relative">
-            <div className="flex items-baseline gap-4">
-              <span className="text-sm text-[var(--color-fog)]">{s.n}</span>
-              <span className="h-px flex-1 bg-[var(--color-line)] md:hidden" />
-            </div>
-            <p className="mt-5 text-[11px] uppercase tracking-[0.24em] text-[var(--color-walnut)]">{s.sub}</p>
-            <h3 className="mt-2 font-[family-name:var(--font-display)] text-[clamp(2.4rem,5vw,4.2rem)] leading-none tracking-[-0.03em]">
-              {s.label}
-            </h3>
-            <p className="mt-4 max-w-xs text-[0.95rem] leading-relaxed">{s.copy}</p>
+    <section className="band-beige py-[var(--spacing-section)]">
+      <div className="container-x grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-20">
+        {/* left: heading + checks */}
+        <div>
+          <Fade><span className="eyebrow mb-6">Planning & documentation</span></Fade>
+          <SplitReveal as="h2" className="h2 text-balance">
+            Detailed site analysis and planning for optimal outcomes
+          </SplitReveal>
+
+          <div className="mt-10 flex flex-col gap-9">
+            {CHECKS.map((c, i) => (
+              <Fade key={c.title} delay={0.06 * i}>
+                <div className="flex gap-5">
+                  <span className="check-bullet mt-1"><Check size={16} strokeWidth={2} /></span>
+                  <div>
+                    <h3 className="font-[family-name:var(--font-display)] text-[1.15rem] leading-snug">{c.title}</h3>
+                    <p className="mt-2 max-w-md text-[0.92rem] leading-relaxed">{c.copy}</p>
+                  </div>
+                </div>
+              </Fade>
+            ))}
           </div>
-        ))}
+
+          <Fade delay={0.18}>
+            <Link href="/about" className="btn mt-11">
+              <span className="btn-label">Discover the process</span>
+              <span className="btn-arrow"><ArrowUpRight size={14} /></span>
+            </Link>
+          </Fade>
+        </div>
+
+        {/* right: overlapping rounded images */}
+        <div className="relative min-h-[420px] lg:min-h-[520px]">
+          <ClipReveal className="img-zoom absolute right-0 top-0 w-[78%]">
+            <div className="img-round-lg relative aspect-[4/5] overflow-hidden shadow-[var(--shadow-card)]">
+              <Image
+                src="/images/service-residential.jpg"
+                alt="Residential interior layout study — warm modern living space"
+                fill
+                sizes="(max-width: 1024px) 80vw, 38vw"
+                className="object-cover"
+              />
+            </div>
+          </ClipReveal>
+          <Fade delay={0.22}>
+            <div className="img-round img-zoom absolute bottom-0 left-0 w-[52%] overflow-hidden border-4 border-[var(--color-cream)] shadow-[var(--shadow-lift)] lg:w-[46%]">
+              <div className="relative aspect-[4/3]">
+                <Image
+                  src="/images/service-office.jpg"
+                  alt="Floor-plan and ceiling coordination drawings brought to life"
+                  fill
+                  sizes="(max-width: 1024px) 46vw, 22vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </Fade>
+        </div>
       </div>
-      <div className="pdc-line mt-14 hidden h-px origin-left bg-[var(--color-line)] md:block" />
     </section>
   );
 }

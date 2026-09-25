@@ -78,7 +78,7 @@ export default function Header() {
           </Link>
 
           <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
-            {nav.slice(1, 5).map((n) => (
+            {nav.slice(1, 6).map((n) => (
               <Link
                 key={n.href}
                 href={n.href}

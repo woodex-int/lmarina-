@@ -1,88 +1,51 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { Quote, ArrowLeft, ArrowRight, Star } from 'lucide-react';
-import { Fade } from '@/components/Motion';
+import { Star, Quote } from 'lucide-react';
+import { Fade, SplitReveal } from '@/components/Motion';
 import { testimonials } from '@/lib/content';
 
 export default function Testimonials() {
-  const [i, setI] = useState(0);
-  const root = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % testimonials.length), 7000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
-    <section className="on-dark relative overflow-hidden bg-[var(--color-walnut-deep)] py-[var(--spacing-section)] text-[var(--color-cream)]">
-      <div aria-hidden className="pointer-events-none absolute -right-20 top-0 h-[34vw] w-[34vw] rounded-full bg-[radial-gradient(circle,rgba(125,147,184,0.20),transparent_65%)]" />
-      <div className="container-x relative">
-        <Fade>
-          <div className="mb-12 flex items-center justify-between">
-            <span className="eyebrow">Client voices</span>
-            <div className="flex gap-3">
-              <button
-                onClick={() => setI((v) => (v - 1 + testimonials.length) % testimonials.length)}
-                className="grid h-12 w-12 place-items-center rounded-full border border-[var(--color-line-light)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-espresso)]"
-                aria-label="Previous testimonial"
-              >
-                <ArrowLeft size={16} />
-              </button>
-              <button
-                onClick={() => setI((v) => (v + 1) % testimonials.length)}
-                className="grid h-12 w-12 place-items-center rounded-full border border-[var(--color-line-light)] transition-colors hover:bg-[var(--color-cream)] hover:text-[var(--color-espresso)]"
-                aria-label="Next testimonial"
-              >
-                <ArrowRight size={16} />
-              </button>
-            </div>
+    <section className="band-beige py-[var(--spacing-section)]">
+      <div className="container-x">
+        <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <Fade><span className="eyebrow mb-6">Client voices</span></Fade>
+            <SplitReveal as="h2" className="h2 text-balance">
+              Quiet proof, from the rooms we made
+            </SplitReveal>
           </div>
-        </Fade>
-
-        <div ref={root} className="grid min-h-[280px] place-items-center text-center md:min-h-[240px]">
-          {testimonials.map((t, idx) => (
-            <figure
-              key={idx}
-              className="col-start-1 row-start-1 max-w-4xl transition-all duration-700"
-              style={{
-                opacity: i === idx ? 1 : 0,
-                transform: i === idx ? 'translateY(0)' : 'translateY(24px)',
-                pointerEvents: i === idx ? 'auto' : 'none',
-                transitionTimingFunction: 'var(--ease-lux)',
-              }}
-              aria-hidden={i !== idx}
-            >
-              <Quote size={34} className="mx-auto mb-7 text-[var(--color-brass-soft)]" />
-              <div className="mb-6 flex justify-center gap-1 text-[var(--color-brass-soft)]">
+          <Fade delay={0.1}>
+            <div className="flex items-center gap-3 rounded-full border border-[var(--color-line)] bg-[var(--color-cream)] px-5 py-2.5">
+              <div className="flex gap-0.5 text-[var(--color-brass)]">
                 {Array.from({ length: 5 }).map((_, k) => (
-                  <Star key={k} size={15} fill="currentColor" strokeWidth={0} />
+                  <Star key={k} size={13} fill="currentColor" strokeWidth={0} />
                 ))}
               </div>
-              <blockquote className="font-[family-name:var(--font-display)] text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.3] tracking-[-0.01em]">
-                “{t.quote}”
-              </blockquote>
-              <figcaption className="mt-8 text-sm">
-                <span className="font-medium text-[var(--color-cream)]">{t.name}</span>
-                <span className="mx-2 opacity-40">/</span>
-                <span className="text-[var(--color-cream)]/60">{t.role}</span>
-              </figcaption>
-            </figure>
-          ))}
+              <span className="text-[0.8rem] font-medium">4.9 average across 60+ reviews</span>
+            </div>
+          </Fade>
         </div>
 
-        <div className="mt-12 flex justify-center gap-2">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setI(idx)}
-              aria-label={`Go to testimonial ${idx + 1}`}
-              className="h-1.5 rounded-full transition-all duration-500"
-              style={{
-                width: i === idx ? 36 : 10,
-                background: i === idx ? 'var(--color-brass-soft)' : 'rgba(244,239,230,0.25)',
-              }}
-            />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {testimonials.map((t, i) => (
+            <Fade key={t.name} delay={(i % 2) * 0.08}>
+              <figure className={`h-full rounded-[var(--radius-l)] p-8 lg:p-9 ${i === 0 ? 'band-white shadow-[var(--shadow-card)]' : 'card-fill'} ${i === 3 ? 'md:col-span-2' : ''}`}>
+                <Quote size={26} className="text-[var(--color-walnut)]" />
+                <blockquote className="mt-5 font-[family-name:var(--font-display)] text-[1.12rem] leading-[1.55] tracking-[-0.015em] lg:text-[1.25rem]">
+                  “{t.quote}”
+                </blockquote>
+                <figcaption className="mt-7 flex items-center gap-4 border-t border-current/10 pt-6">
+                  <span className="grid h-11 w-11 place-items-center rounded-full bg-[var(--color-brass)] text-[12px] font-semibold text-[var(--color-cream)]">
+                    {t.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}
+                  </span>
+                  <span className="text-sm">
+                    <span className="block font-medium">{t.name}</span>
+                    <span className="text-[var(--color-fog)]">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            </Fade>
           ))}
         </div>
       </div>
